@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/Java/ASPEN/src/META-INF/persistence.xml</file>
+            <file>file:/E:/Java/ASPEN/src/modelo/Cliente.java</file>
+            <file>file:/E:/Java/ASPEN/src/visao/TelaManutencaoCliente.java</file>
+            <file>file:/E:/Java/ASPEN/src/visao/TelaDadosCliente.java</file>
+            <file>file:/E:/Java/ASPEN/src/controle/GerenciadorConexao.java</file>
+            <file>file:/E:/Java/ASPEN/src/visao/TelaPrincipal.java</file>
+            <file>file:/E:/Java/ASPEN/src/controle/ControleCliente.java</file>
+        </group>
+    </open-files>
+</project-private>
