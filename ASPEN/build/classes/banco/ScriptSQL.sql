@@ -11,8 +11,9 @@ CREATE DATABASE aspen;
 
 use aspen;
 
-CREATE TABLE cliente(
-	cod_cliente int not null primary key auto_increment,
+CREATE TABLE usuario(
+    cod_usuario int not null primary key auto_increment,
+    tipo_usuario varchar(3) not null,
     nome varchar(50) not null,
     cpf varchar(14) not null,
     telfone varchar(17) not null,
@@ -21,5 +22,17 @@ CREATE TABLE cliente(
     estado varchar(2) not null,
     cep varchar(9) not null,
     senha varchar(8) not null,
+    email varchar(50) not null
+);
+
+CREATE TABLE cliente(
+    cod_cliente int not null primary key auto_increment,
+    nome varchar(50) not null,
+    cpf varchar(14) not null,
+    telfone varchar(17) not null,
+    endereco varchar(50) not null,
+    cidade varchar(50) not null,
+    estado varchar(2) not null,
+    cep varchar(9) not null,
     email varchar(50) not null
 );

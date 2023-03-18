@@ -4,6 +4,8 @@
  */
 package visao;
 
+import java.awt.Color;
+
 /**
  *
  * @author Aluno
@@ -31,17 +33,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtTitle = new javax.swing.JLabel();
         panPrincipal = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        panServico = new javax.swing.JPanel();
+        botServico = new javax.swing.JLabel();
+        panCarro = new javax.swing.JPanel();
+        botCarro = new javax.swing.JLabel();
+        panCliente = new javax.swing.JPanel();
+        botCliente = new javax.swing.JLabel();
+        panUsuario = new javax.swing.JPanel();
+        botUsuario = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        panCaixa = new javax.swing.JPanel();
+        botCaixa = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,129 +73,173 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 4));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panServico.setBackground(new java.awt.Color(204, 204, 255));
+        panServico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/servicos.png"))); // NOI18N
-        jLabel4.setText("Gerenciar Serviços");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/carro.png"))); // NOI18N
-        jLabel6.setText("Gerenciar Carros");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel4);
-
-        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/cliente.png"))); // NOI18N
-        jLabel8.setText("Gerenciar Clientes");
-        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+        botServico.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botServico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/servicos.png"))); // NOI18N
+        botServico.setText("Gerenciar Serviços");
+        botServico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botServico.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botServico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botServicoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botServicoMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+        javax.swing.GroupLayout panServicoLayout = new javax.swing.GroupLayout(panServico);
+        panServico.setLayout(panServicoLayout);
+        panServicoLayout.setHorizontalGroup(
+            panServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-        );
-
-        jPanel6.add(jPanel5);
-
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/usuario.png"))); // NOI18N
-        jLabel3.setText("Gerenciar Usuário");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+        panServicoLayout.setVerticalGroup(
+            panServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botServico, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
         );
 
-        jPanel6.add(jPanel2);
+        jPanel6.add(panServico);
+
+        panCarro.setBackground(new java.awt.Color(204, 204, 255));
+        panCarro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        botCarro.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botCarro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/carro.png"))); // NOI18N
+        botCarro.setText("Gerenciar Carros");
+        botCarro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botCarro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botCarro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botCarroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botCarroMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panCarroLayout = new javax.swing.GroupLayout(panCarro);
+        panCarro.setLayout(panCarroLayout);
+        panCarroLayout.setHorizontalGroup(
+            panCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCarro, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+        );
+        panCarroLayout.setVerticalGroup(
+            panCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCarro, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+        );
+
+        jPanel6.add(panCarro);
+
+        panCliente.setBackground(new java.awt.Color(204, 204, 255));
+        panCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        botCliente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/cliente.png"))); // NOI18N
+        botCliente.setText("Gerenciar Clientes");
+        botCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botClienteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botClienteMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panClienteLayout = new javax.swing.GroupLayout(panCliente);
+        panCliente.setLayout(panClienteLayout);
+        panClienteLayout.setHorizontalGroup(
+            panClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+        );
+        panClienteLayout.setVerticalGroup(
+            panClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+        );
+
+        jPanel6.add(panCliente);
+
+        panUsuario.setBackground(new java.awt.Color(204, 204, 255));
+        panUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        botUsuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/usuario.png"))); // NOI18N
+        botUsuario.setText("Gerenciar Usuário");
+        botUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botUsuarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botUsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botUsuarioMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panUsuarioLayout = new javax.swing.GroupLayout(panUsuario);
+        panUsuario.setLayout(panUsuarioLayout);
+        panUsuarioLayout.setHorizontalGroup(
+            panUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+        );
+        panUsuarioLayout.setVerticalGroup(
+            panUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+        );
+
+        jPanel6.add(panUsuario);
 
         panPrincipal.add(jPanel6);
 
         jPanel7.setLayout(new java.awt.GridLayout(1, 4));
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panCaixa.setBackground(new java.awt.Color(204, 204, 255));
+        panCaixa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/caixa.png"))); // NOI18N
-        jLabel2.setText("Gerenciar Caixa");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botCaixa.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botCaixa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/caixa.png"))); // NOI18N
+        botCaixa.setText("Gerenciar Caixa");
+        botCaixa.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botCaixa.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botCaixa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botCaixaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botCaixaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botCaixaMousePressed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+        javax.swing.GroupLayout panCaixaLayout = new javax.swing.GroupLayout(panCaixa);
+        panCaixa.setLayout(panCaixaLayout);
+        panCaixaLayout.setHorizontalGroup(
+            panCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCaixa, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        panCaixaLayout.setVerticalGroup(
+            panCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(botCaixa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel7.add(jPanel8);
+        jPanel7.add(panCaixa);
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -225,16 +271,67 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE))
+                .addComponent(panPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void botClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botClienteMouseClicked
+        setVisible(false);
         TelaManutencaoCliente tela = new TelaManutencaoCliente(this, true);
         tela.setVisible(true);
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_botClienteMouseClicked
+
+    private void botUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botUsuarioMouseClicked
+        setVisible(false);
+        TelaManutencaoUsuario tela = new TelaManutencaoUsuario(this, true);
+        tela.setVisible(true);
+    }//GEN-LAST:event_botUsuarioMouseClicked
+
+    private void botUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botUsuarioMouseEntered
+        panUsuario.setBackground(Color.white);
+    }//GEN-LAST:event_botUsuarioMouseEntered
+
+    private void botUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botUsuarioMouseExited
+        panUsuario.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botUsuarioMouseExited
+
+    private void botClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botClienteMouseEntered
+        panCliente.setBackground(Color.white);
+    }//GEN-LAST:event_botClienteMouseEntered
+
+    private void botClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botClienteMouseExited
+        panCliente.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botClienteMouseExited
+
+    private void botCarroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCarroMouseEntered
+        panCarro.setBackground(Color.white);
+    }//GEN-LAST:event_botCarroMouseEntered
+
+    private void botCarroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCarroMouseExited
+        panCarro.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botCarroMouseExited
+
+    private void botServicoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botServicoMouseEntered
+        panServico.setBackground(Color.white);
+    }//GEN-LAST:event_botServicoMouseEntered
+
+    private void botServicoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botServicoMouseExited
+       panServico.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botServicoMouseExited
+
+    private void botCaixaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCaixaMouseEntered
+        panCaixa.setBackground(Color.white);
+    }//GEN-LAST:event_botCaixaMouseEntered
+
+    private void botCaixaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCaixaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botCaixaMousePressed
+
+    private void botCaixaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCaixaMouseExited
+        panCaixa.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botCaixaMouseExited
 
     /**
      * @param args the command line arguments
@@ -272,21 +369,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel botCaixa;
+    private javax.swing.JLabel botCarro;
+    private javax.swing.JLabel botCliente;
+    private javax.swing.JLabel botServico;
+    private javax.swing.JLabel botUsuario;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel panCaixa;
+    private javax.swing.JPanel panCarro;
+    private javax.swing.JPanel panCliente;
     private javax.swing.JPanel panPrincipal;
+    private javax.swing.JPanel panServico;
+    private javax.swing.JPanel panUsuario;
     private javax.swing.JLabel txtTitle;
     // End of variables declaration//GEN-END:variables
 }

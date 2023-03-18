@@ -67,12 +67,14 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
         botExcluir = new javax.swing.JButton();
         botAlterar = new javax.swing.JButton();
         botVisualizar = new javax.swing.JButton();
-        botConfirmar = new javax.swing.JButton();
+        botSair = new javax.swing.JButton();
         txtPesquisar = new javax.swing.JTextField();
         botPesquisar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -114,6 +116,11 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
         });
 
         botExcluir.setText("Excluir");
+        botExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botExcluirActionPerformed(evt);
+            }
+        });
 
         botAlterar.setText("Alterar");
         botAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +130,23 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
         });
 
         botVisualizar.setText("Visualizar");
+        botVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botVisualizarActionPerformed(evt);
+            }
+        });
 
-        botConfirmar.setText("Confirmar");
+        botSair.setText("Sair");
+        botSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botSairActionPerformed(evt);
+            }
+        });
 
         txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisarKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPesquisarKeyTyped(evt);
             }
@@ -164,7 +184,7 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botVisualizar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botConfirmar))
+                                .addComponent(botSair))
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -186,7 +206,7 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
                     .addComponent(botExcluir)
                     .addComponent(botAlterar)
                     .addComponent(botVisualizar)
-                    .addComponent(botConfirmar))
+                    .addComponent(botSair))
                 .addGap(0, 28, Short.MAX_VALUE))
         );
 
@@ -225,7 +245,7 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_botNovoActionPerformed
 
     private void txtPesquisarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyTyped
-        atualizarTabela();
+
     }//GEN-LAST:event_txtPesquisarKeyTyped
 
     private void botPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botPesquisarActionPerformed
@@ -265,6 +285,64 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_botAlterarActionPerformed
 
+    private void botExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botExcluirActionPerformed
+        int linha = tabCliente.getSelectedRow();
+        
+        if (linha == -1)
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Não foi selecionado nenhuma usuário. Selecione.");
+        }
+        else
+        {
+            // cria o dialog de confirmação
+            int resposta = JOptionPane.showConfirmDialog(null,
+                    "Deseja excluir esse usuário?",
+                    "Exclusão de Usuários", 
+                    JOptionPane.YES_NO_OPTION);
+            
+            // verifica o que foi clicado
+            if (resposta == JOptionPane.YES_OPTION)
+            {
+                controle.remover(listClientes.get(linha));
+                atualizarTabela();
+            }
+        }
+    }//GEN-LAST:event_botExcluirActionPerformed
+
+    private void botVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botVisualizarActionPerformed
+        int linha = tabCliente.getSelectedRow();
+        
+        if (linha == -1)
+        {
+            JOptionPane.showMessageDialog(null, 
+                    "Não foi selecionado nenhum categoria. Selecione.");
+        }
+        else
+        {
+            TelaDadosCliente tela = new TelaDadosCliente(null, true);
+            
+            tela.setCliente(listClientes.get(linha));
+
+         //   tela.setCategoria(controle.getCategoria(linha));
+            
+            tela.desabilitarEdicao();
+            
+            tela.setVisible(true);    
+            
+        }    
+    }//GEN-LAST:event_botVisualizarActionPerformed
+
+    private void botSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botSairActionPerformed
+        TelaPrincipal tela = new TelaPrincipal();
+        setVisible(false);
+        tela.setVisible(true);
+    }//GEN-LAST:event_botSairActionPerformed
+
+    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+        atualizarTabela();
+    }//GEN-LAST:event_txtPesquisarKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -291,6 +369,9 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(TelaManutencaoCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -309,10 +390,10 @@ public class TelaManutencaoCliente extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botAlterar;
-    private javax.swing.JButton botConfirmar;
     private javax.swing.JButton botExcluir;
     private javax.swing.JButton botNovo;
     private javax.swing.JButton botPesquisar;
+    private javax.swing.JButton botSair;
     private javax.swing.JButton botVisualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

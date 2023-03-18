@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Aluno
+ * @author wally
  */
 @Entity
 
@@ -28,9 +28,8 @@ import javax.persistence.Table;
                         + "WHERE c.nome LIKE :nomequalquer")
 })
 
-
 @Table(name = "cliente")
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_cliente")
@@ -57,25 +56,21 @@ public class Cliente implements Serializable{
     @Column(name = "cep", length = 9, nullable = false)
     private String cep;
     
-    @Column(name = "senha", length = 8, nullable = false)
-    private String senha;
-    
     @Column(name = "email", length = 50, nullable = false)
     private String email;  
 
     public Cliente() {
     }
 
-    public Cliente(int codigo, String nome, String cpf, String telfone, String endereco, String cidade, String estado, String cep, String senha, String email) {
+    public Cliente(int codigo, String nome, String cpf, String telefone, String endereco, String cidade, String estado, String cep, String email) {
         this.codigo = codigo;
         this.nome = nome;
         this.cpf = cpf;
-        this.telefone = telfone;
+        this.telefone = telefone;
         this.endereco = endereco;
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
-        this.senha = senha;
         this.email = email;
     }
 
@@ -103,12 +98,12 @@ public class Cliente implements Serializable{
         this.cpf = cpf;
     }
 
-    public String getTelfone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telfone) {
-        this.telefone = telfone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEndereco() {
@@ -143,14 +138,6 @@ public class Cliente implements Serializable{
         this.cep = cep;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -162,7 +149,7 @@ public class Cliente implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.codigo;
+        hash = 73 * hash + this.codigo;
         return hash;
     }
 
@@ -180,6 +167,7 @@ public class Cliente implements Serializable{
         final Cliente other = (Cliente) obj;
         return this.codigo == other.codigo;
     }
+    
     
     
 }

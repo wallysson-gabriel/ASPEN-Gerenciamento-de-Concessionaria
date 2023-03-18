@@ -4,17 +4,23 @@
  */
 package controle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.TypedQuery;
 import modelo.Cliente;
 
 /**
  *
- * @author Aluno
+ * @author wally
  */
-public class ControleCliente {
+
+public class ControleCliente{
     private static ArrayList<Cliente> listClientes = new ArrayList<>();
         
     public void adicionar(Cliente cliente)
